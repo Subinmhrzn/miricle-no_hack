@@ -135,7 +135,9 @@ export default function Listing() {
                 : listing.regularPrice.toLocaleString("en-US")}
               {listing.type === "rent" && " / month"}
             </p>
+              {listing.type !== "rent" && 
             <p>Current Bid - Rs. {listing.bidAmount}</p>
+              }
             <p className="flex items-center mt-6 gap-2 text-slate-600  text-sm">
               <FaMapMarkerAlt className="text-green-700" />
               {listing.address}
@@ -146,7 +148,7 @@ export default function Listing() {
               </p>
               {listing.offer && (
                 <p className="bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md">
-                  ${+listing.regularPrice - +listing.discountedPrice} OFF
+                  Rs. {+listing.regularPrice - +listing.discountedPrice} OFF
                 </p>
               )}
             </div>
@@ -178,9 +180,13 @@ export default function Listing() {
             </ul>
             <h3>For more detail: 9825138717</h3>
             <div>
-              <button className="bg-red-400 px-12 py-1 rounded-md text-white" onClick={() => setOpen(true)}>
+              {
+                listing.type !== "rent" && (
+                  <button className="bg-red-400 px-12 py-1 rounded-md text-white" onClick={() => setOpen(true)}>
                 Bid
               </button>
+              ) 
+            }
               <Dialog open={open} onClose={setOpen} className="relative z-10">
                 <DialogBackdrop
                   transition
