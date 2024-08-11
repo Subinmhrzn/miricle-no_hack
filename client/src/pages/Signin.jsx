@@ -53,14 +53,7 @@ export default function SignIp() {
         <input type="password" placeholder='Password' id='password' className='bg-slate-100 p-3 rounded-lg'
         onChange={handleChange}
         />
-        <h1>Select Who You Are</h1>
-      <select  onChange={handleChange}>
-        <option value="">--Please choose an option--</option>
-        <option value="option1">Buyer</option>
-        <option value="option2">seller</option>
         
-      </select>
-
         
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
           {loading ? 'Loading...':'Sign in'}

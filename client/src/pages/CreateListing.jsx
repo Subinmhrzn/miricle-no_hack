@@ -273,7 +273,7 @@ export default function CreateListing() {
                 type='number'
                 id='regularPrice'
                 min='50'
-                max='10000000'
+                max='100000000000000'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
@@ -292,7 +292,7 @@ export default function CreateListing() {
                   type='number'
                   id='discountedPrice'
                   min='0'
-                  max='10000000'
+                  max='100000000000000'
                   required
                   className='p-3 border border-gray-300 rounded-lg'
                   onChange={handleChange}
@@ -302,7 +302,7 @@ export default function CreateListing() {
                   <p>Discounted price</p>
 
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(RS. / month)</span>
                   )}
                 </div>
               </div>
@@ -364,6 +364,8 @@ export default function CreateListing() {
             {loading ? 'Creating...' : 'Create listing'}
           </button>
           {error && <p className='text-red-700 text-sm'>{error}</p>}
+
+          <p>5% wiil be charged after selling</p>
         </div>
       </form>
     </main>

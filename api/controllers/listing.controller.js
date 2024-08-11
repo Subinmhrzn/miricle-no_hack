@@ -57,7 +57,7 @@ export const updateListingBidAmount = async (req, res, next) => {
     return next(errorHandler(404, 'Listing not found!'));
   }
   if (listing.bidAmount > bidAmount) {
-    return next(errorHandler(400, 'Talai Garib'))
+    return next(errorHandler(400, 'Your bidding amount is lesser than the previous one.'))
   }
 
   console.log("bid amount", {bidAmount: +bidAmount})
